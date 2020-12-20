@@ -1,0 +1,153 @@
+Python
+
+pip3 install --user module - to install a module in linux. (if you need special version use -U module==version)
+Conditions will consider some values in other data types equivalent to True and False. 
+	When used in conditions, 0, 0.0, and '' (the empty string) are considered False, while all other values are considered True
+	
+	Just like the Boolean True and False values, None must be typed with a capital N.
+
+we can import a function by import random or from random import *
+	With this form of import statement, calls to functions in random will not need the random. prefix. 
+	in the first form needs random.randint like statement, ie random. prefix
+	
+	If you had a function named bacon() inside a module named spam, function can be called with spam.bacon()
+	
+You can cause the program to terminate, or exit, before the last instruction by calling the sys.exit() function.
+	its like using break inside a loop.
+
+The print() function has the optional parameters end and sep to specify what should be printed at the end of its arguments and between its arguments (separating them), respectively
+
+LIST
+The del statement will delete values at an index in a list.
+	howdy' in ['hello', 'hi', 'howdy', 'heyas'] - this will give True, we can also use out instead of in.
+	extend() method - takes a single argument, which is always a list, and adds each of the items of that list to a_list.
+	count() method returns the number of occurrences of a specific value in a list.
+	we can assign multiple value in a same line, ie instead of assigning each element of a list with index no.The number of variables and the 	length of the list must be exactly equal
+	
+	enumerate function with list.- Instead of using the range(len(someList)) technique with a for loop to obtain the integer index of the 		items in the list, you can call the enumerate() function instead. On each iteration of the loop, enumerate() will return two values: the 		index of the item in the list, and the item in the list itself.
+			for index, item in enumerate(listName):	
+	
+	Python provides a module named copy that provides both the copy() and deepcopy() functions. The first of these, copy.copy(), can be used 		to make a duplicate copy of a mutable value like a list or dictionary, not just a copy of a reference.
+	
+	If the list you need to copy contains lists, then use the copy.deepcopy() function instead of copy.copy(). The deepcopy() function will 		copy these inner lists as well.
+
+SET
+	To create an empty set, call set() with no arguments.
+	to add values to an existing set: the add() method, and the update() method.	update method is a kind of extend method in list, it iterate to the argument we passed. upadate also take a set,tuple and list as argument.
+	discard(), remove() and pop() method - if the value doesnt exist in the set, the remove() method raises a keyerror exception, whereas discard does nothing.
+	clear() method will removes all the values from a set.
+	a_set.union(b_set) method returns a new set containing all the elements that are in either set.
+	a_set.intersection(b_set) method returns a new set containing all the elements that are in both sets.
+	a_set.difference(b_set) method returns a new set containing all the elements that are in a_set but not b_set.
+	a_set.symmetric_difference(b_set) method returns a new set containing all the elements that are in exactly one of the sets.
+
+DICTIONARIES
+dictionaries have a get() method that takes two arguments: the key of the value to retrieve and a fallback value to return if that key does not exist.
+	
+	The setdefault() method -  The first argument passed to the method is the key to check for, and the second argument is the value 			to set at that key if the key does not exist. If the key does exist, the setdefault() method returns the key’s value.
+	
+Pretty Printing
+	If you import the pprint module into your programs, you’ll have access to the pprint() and pformat() functions that will “pretty print” a 	dictionary’s values. This is helpful when you want a cleaner display of the items in a dictionary than what print() provides.
+	
+		pprint.pprint(someDictionaryValue)
+		print(pprint.pformat(someDictionaryValue)) - both type are sa
+		
+STRING MANIPULATION
+we can type in multiple line and print in a single line by putting in paranthesis and type in quotation mark in each line.
+multiline string - triple single quote & multiline comment- triple double quote
+	isalpha() Returns True if the string consists only of letters and isn’t blank
+	isalnum() Returns True if the string consists only of letters and numbers and is not blank
+	isdecimal() Returns True if the string consists only of numeric characters and is not blank
+	isspace() Returns True if the string consists only of spaces, tabs, and newlines and is not blank
+	s.find('other') - searches for the given other string (not a regular expression) within s, and returns the first index where it begins or -1 if not found
+	s.replace('old', 'new') -- returns a string where all occurrences of 'old' have been replaced by 'new'
+	istitle() Returns True if the string consists only of words that begin with an uppercase letter followed by only lowercaseletters		
+	
+	The startswith() and endswith() methods return True if the string value they are called on begins or ends (respectively) with the string 		passed to the method
+	join() - method is useful when you have a list of strings that need to be joined together into a single string value. The join() method is 	called on a string, gets passed a list of strings, and returns a string.
+		delimeter.join(listname)
+	
+	The partition() string method can split a string into the text before and after a separator string. This method searches the string it is 	called on for the separator string it is passed, and returns a tuple of three substrings for the “before,” “separator,” and “after” 		substrings. If the separator string you pass to partition() occurs multiple times in the string that partition() calls on, the method 		splits the string only on the first occurrence
+	
+	split() - It’s called on a string value and returns a list of strings.
+		PARTITION METHOD RETURS TUPLE WHERE AS SPLIT METHOD RETURNS A LIST. PARTITION AND SPLIT METHODS ARE ENTIRELY DIFFERENT.
+	
+	rjust() - right shift and ljust()- left shift, string methods return a padded version of the string they are called on, with spaces 		inserted to justify the text. The first argument to both methods is an integer length for the justified string.An optional second argument 	to rjust() and ljust() will specify a fill character other than a space character.
+	center() method centers the text rather than justifying it to the left or right. it also takes two arguments.
+	
+	strip() method will return a new string without any whitespace characters at the beginning or end. lstrip() and rstrip() methods will 		remove whitespace characters from the left and right ends, respectively.Optionally, a string argument will specify which characters on the 	ends should be stripped.The order of the characters in the string passed to strip() does not matter:
+	
+	ord() function to get the code point of a one-character string, and the chr() function to get the one-character string of an integer code 	point.
+	
+PYPERCLIP MODULE
+	The pyperclip module has copy() and paste() functions that can send text to and receive text from your computer’s clipboard.
+		pyperclip.copy('text' or variable) ,pyperclip.paste()
+
+REGULAR EXPRESIION
+	re.compile(r'patter'). variavle.search('string to search'), variable.group() 
+	search() to find a single match, findall() to find all matching instances, and sub() to do a find-and-replace substitution of text.
+
+findall() - When called on a regex with no groups, such as \d\d\d-\d\d\d-\d\d\d\d, the method findall() returns a list of string matches, such as ['415-555-9999', '212-555-0000'].
+	When called on a regex that has groups, such as (\d\d\d)-(\d\d\d)-(\d\d\d\d), the method findall() returns a list of tuples of strings (one string for each group), such as [('415', '555', '9999'), ('212', '555', '0000')]
+	>>> agentNamesRegex = re.compile(r'Agent (\w)\w*')
+	>>> agentNamesRegex.sub(r'\1****', 'Agent Alice told Agent Carol that Agent
+	
+	
+PyInputPlus Module
+	pyinputplus.inputInt(prompt='Enter a number: ')
+	Python’s help() function to find out more about each of these functions. For example, help(pyinputplus.inputChoice) displays help 	information for the inputChoice() function. Complete documentation can be found at https://pyinputplus.readthedocs.io/.
+	
+	inputStr() Is like the built-in input() function but has the general PyInputPlus features. You can also pass a custom validation 		function to it
+
+	inputNum() Ensures the user enters a number and returns an int or float, depending on if the number has a decimal point in it
+	inputInt() inputFloat() 
+	
+	inputChoice() Ensures the user enters one of the provided choices	
+
+	inputMenu() Is similar to inputChoice(), but provides a menu with numbered or lettered options
+
+	inputDatetime() Ensures the user enters a date and time
+
+	inputYesNo() Ensures the user enters a “yes” or “no” response
+	    response = pyip.inputYesNo(prompt, yesVal='sí', noVal='no') ie user can enter si instead of si. passing keyword argument
+
+	inputBool() Is similar to inputYesNo(), but takes a “True” or “False” response and returns a Boolean value
+
+	inputEmail() Ensures the user enters a valid email address
+	
+	inputFilepath() Ensures the user enters a valid file path and filename, and can optionally check that a file with that name exists
+
+	inputPassword() Is like the built-in input(), but displays * characters as the user types so that passwords, or other sensitive 		information, aren’t displayed on the screen
+	
+Google SpreadSheet
+	[] to index - indxing is different than matrix indexing, first column number then row number
+	https://ezsheets.readthedocs.io/. 
+	
+	
+dir(sys) — dir() is like help() but just gives a quick list of its defined symbols, or "attributes"
+when using dir use it like print(dir(sys)), 
+help function can also use like help(sys.exit)
+The % operator takes a printf-type format string on the left (%d int, %s string, %f/%g floating point), 
+repr() : evaluatable string representation of an object - use with %s for string representation of the object passed in a function.
+
+
+OS MODULE
+	filenames = os.listdir(dir) -- list of filenames in that directory path (not including . and ..). The filenames are just the names 	in the directory, not their absolute paths.
+	os.path.join(dir, filename) -- given a filename from the above list, use this to put the dir and filename together to make a path
+	os.path.abspath(path) -- given a path, return an absolute form, e.g. /home/nick/foo/bar.html
+	os.path.dirname(path), os.path.basename(path) -- given dir/foo/bar.html, return the dirname "dir/foo" and basename "bar.html"
+	os.path.exists(path) -- true if it exists, use absalute path
+	os.mkdir(dir_path) -- makes one dir, os.makedirs(dir_path) makes all the needed dirs in this path
+	we have to import shutil module and use absalute path to copy a file.
+		shutil.copy(source-path, dest-path) -- copy a file (dest path directories should exist) 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
