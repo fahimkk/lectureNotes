@@ -1,0 +1,49 @@
+DockerFile  - inside this file, we can write the codes for docker
+.dockerignore - same as .gitignore
+
+Create docker imgage
+$ docker build -t app ./
+-t means the type of the image (name, here app) and ./ means do it on this local directory
+
+after creating docker image to run the container with the docker image
+$ docker run -it -p 5000:80 app
+-it means interactive terminal (this will shows what happening inside the container into the terminal)
+-p for port. 5000 in local machine and 80 in container.
+
+we can create a docker-compose.yml file to store all the settings 
+after that we can simply start the docker by
+$ docker-compose up
+
+# install docker compose 
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+
+docker-compose --version
+
+
+#1
+docker-compose.yml
+version: "3"
+services:
+  backend:
+    build: ./
+    restart: always
+    ports:
+      - 80:80
+
+when 1 works fine, use the 2 nd one, and also run with trafaek
+
+# run with traefik
+$ docker-compose -f docker-compose.traefik.yml up
+
+# if it shows network not found error
+$ docker network create traefik-public
+( or $ docker network create --driver=overlay traefik-public)
+then run again the previous command
+
+
+# to run in demond mode, ie in background
+$ docker-compose -f docker-compose.traefik.yml up -d
+
+# so traefik keeps in background, now run with docker-compose.yml (2nd file)
+$ docker-compose -f docker-compose.yml up -d
